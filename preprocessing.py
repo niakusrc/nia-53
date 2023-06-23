@@ -3,9 +3,6 @@ import os
 import shutil
 from importlib import reload
 from pathlib import Path
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
 dir_path = os.getcwd() + "/dataset/라벨링데이터"
 save_path = os.getcwd() +'/result'
 # print(dir_path)
