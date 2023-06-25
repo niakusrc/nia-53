@@ -16,9 +16,15 @@ def preprocessing():
     else:
         print('프로젝트 경로 ' + os.getcwd() + '/dataset/ 에서' + '"라벨링데이터" 폴더를 찾았습니다.')
         for folder in os.listdir(save_path + '/'):
-            print('프로젝트 경로 ' + save_path + '/' + '에 존재하는 폴더"' + folder + '"를 삭제합니다.')
-            shutil.rmtree(save_path + '/' + folder)
-            print('프로젝트 경로 ' + save_path + '/' + '에 존재하는 폴더"' + folder + '"를 삭제하였습니다.')
+
+            if os.path.isfile(save_path + '/' + folder):
+                print('프로젝트 경로 ' + save_path + '/' + '에 존재하는 파일"' + folder + '"를 삭제합니다.')
+                os.remove(save_path + '/' + folder)
+                print('프로젝트 경로 ' + save_path + '/' + '에 존재하는 파일"' + folder + '"를 삭제하였습니다.')
+            if os.path.isdir(save_path + '/' + folder):
+                print('프로젝트 경로 ' + save_path + '/' + '에 존재하는 폴더"' + folder + '"를 삭제합니다.')
+                shutil.rmtree(save_path + '/' + folder)
+                print('프로젝트 경로 ' + save_path + '/' + '에 존재하는 폴더"' + folder + '"를 삭제하였습니다.')
         for region in region_list:
             print('프로젝트 경로 ' + save_path + '/' + '에 "' + region + '"지역 폴더를 생성합니다.')
             os.makedirs(save_path + '/total/' + region + '/07')
