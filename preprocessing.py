@@ -7,7 +7,7 @@ dir_path = os.getcwd() + "/dataset/라벨링데이터"
 save_path = os.getcwd() +'/result'
 # print(dir_path)
 # print(os.path.isdir(dir_path))
-region_list = ['서울특별시','대전광역시','경기도','대구광역시','부산광역시','울산광역시','광주광역시','인천광역시']
+region_list = ['seoul','daejeon','gyeonggi','daegu','busan','ulsan','gwangju','incheon']
 dataset_category_list = ['train','valid','test']
 test_target = ['20221025','20221026','20221027','20221028','20221029','20221030','20221031','202211']
 def preprocessing():
@@ -44,37 +44,37 @@ def preprocessing():
                     origin_data = json.load(st_json)
                     print('원본 데이터 내용 : ', origin_data)
                 if '서울' in file:
-                    with open(save_path + '/total/' + '서울특별시/' + file, 'w', encoding='UTF8') as make_file:
+                    with open(save_path + '/total/' + 'seoul/' + file, 'w', encoding='UTF8') as make_file:
                         json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                        print('저장 대상 경로 : ', save_path + '/total/' + '서울특별시/' + file)
+                        print('저장 대상 경로 : ', save_path + '/total/' + 'seoul/' + file)
                 elif '대전' in file:
-                    with open(save_path + '/total/' + '대전광역시/' + file, 'w', encoding='UTF8') as make_file:
+                    with open(save_path + '/total/' + 'daejeon/' + file, 'w', encoding='UTF8') as make_file:
                         json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                        print('저장 대상 경로 : ', save_path + '/total/' + '대전광역시/' + file)
+                        print('저장 대상 경로 : ', save_path + '/total/' + 'daejeon/' + file)
                 elif '경기' in file:
-                    with open(save_path + '/total/' + '경기도/' + file, 'w', encoding='UTF8') as make_file:
+                    with open(save_path + '/total/' + 'gyeonggi/' + file, 'w', encoding='UTF8') as make_file:
                         json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                        print('저장 대상 경로 : ', save_path + '/total/' + '경기도/' + file)
+                        print('저장 대상 경로 : ', save_path + '/total/' + 'gyeonggi/' + file)
                 elif '대구' in file:
-                    with open(save_path + '/total/' + '대구광역시/' + file, 'w', encoding='UTF8') as make_file:
+                    with open(save_path + '/total/' + 'daegu/' + file, 'w', encoding='UTF8') as make_file:
                         json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                        print('저장 대상 경로 : ', save_path + '/total/' + '대구광역시/' + file)
+                        print('저장 대상 경로 : ', save_path + '/total/' + 'daegu/' + file)
                 elif '부산' in file:
-                    with open(save_path + '/total/' + '부산광역시/' + file, 'w', encoding='UTF8') as make_file:
+                    with open(save_path + '/total/' + 'busan/' + file, 'w', encoding='UTF8') as make_file:
                         json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                        print('저장 대상 경로 : ', save_path + '/total/' + '부산광역시/' + file)
+                        print('저장 대상 경로 : ', save_path + '/total/' + 'busan/' + file)
                 elif '울산' in file:
-                    with open(save_path + '/total/' + '울산광역시/' + file, 'w', encoding='UTF8') as make_file:
+                    with open(save_path + '/total/' + 'ulsan/' + file, 'w', encoding='UTF8') as make_file:
                         json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                        print('저장 대상 경로 : ', save_path + '/total/' + '울산광역시/' + file)
+                        print('저장 대상 경로 : ', save_path + '/total/' + 'ulsan/' + file)
                 elif '광주' in file:
-                    with open(save_path + '/total/' + '광주광역시/' + file, 'w', encoding='UTF8') as make_file:
+                    with open(save_path + '/total/' + 'gwangju/' + file, 'w', encoding='UTF8') as make_file:
                         json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                        print('저장 대상 경로 : ', save_path + '/total/' + '광주광역시/' + file)
+                        print('저장 대상 경로 : ', save_path + '/total/' + 'gwangju/' + file)
                 elif '인천' in file:
-                    with open(save_path + '/total/' + '인천광역시/' + file, 'w', encoding='UTF8') as make_file:
+                    with open(save_path + '/total/' + 'incheon/' + file, 'w', encoding='UTF8') as make_file:
                         json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                        print('저장 대상 경로 : ', save_path + '/total/' + '인천광역시/' + file)
+                        print('저장 대상 경로 : ', save_path + '/total/' + 'incheon/' + file)
                 else:
                     print('파일명 ' + dir_path + '/' + month + '/' + file + '은 8개 도시에 포함되지 않습니다.')
 
@@ -89,37 +89,37 @@ def preprocessing():
                                 origin_data = json.load(st_json)
                                 print('원본 테스트 데이터 내용 : ', origin_data)
                             if '서울' in file:
-                                with open(save_path + '/test/' + '서울특별시/' + file, 'w', encoding='UTF8') as make_file:
+                                with open(save_path + '/test/' + 'seoul/' + file, 'w', encoding='UTF8') as make_file:
                                     json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + '서울특별시/' + file)
+                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + 'seoul/' + file)
                             elif '대전' in file:
-                                with open(save_path + '/test/' + '대전광역시/' + file, 'w', encoding='UTF8') as make_file:
+                                with open(save_path + '/test/' + 'daejeon/' + file, 'w', encoding='UTF8') as make_file:
                                     json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + '대전광역시/' + file)
+                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + 'daejeon/' + file)
                             elif '경기' in file:
-                                with open(save_path + '/test/' + '경기도/' + file, 'w', encoding='UTF8') as make_file:
+                                with open(save_path + '/test/' + 'gyeonggi/' + file, 'w', encoding='UTF8') as make_file:
                                     json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + '경기도/' + file)
+                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + 'gyeonggi/' + file)
                             elif '대구' in file:
-                                with open(save_path + '/test/' + '대구광역시/' + file, 'w', encoding='UTF8') as make_file:
+                                with open(save_path + '/test/' + 'daegu/' + file, 'w', encoding='UTF8') as make_file:
                                     json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + '대구광역시/' + file)
+                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + 'daegu/' + file)
                             elif '부산' in file:
-                                with open(save_path + '/test/' + '부산광역시/' + file, 'w', encoding='UTF8') as make_file:
+                                with open(save_path + '/test/' + 'busan/' + file, 'w', encoding='UTF8') as make_file:
                                     json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + '부산광역시/' + file)
+                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + 'busan/' + file)
                             elif '울산' in file:
-                                with open(save_path + '/test/' + '울산광역시/' + file, 'w', encoding='UTF8') as make_file:
+                                with open(save_path + '/test/' + 'ulsan/' + file, 'w', encoding='UTF8') as make_file:
                                     json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + '울산광역시/' + file)
+                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + 'ulsan/' + file)
                             elif '광주' in file:
-                                with open(save_path + '/test/' + '광주광역시/' + file, 'w', encoding='UTF8') as make_file:
+                                with open(save_path + '/test/' + 'gwangju/' + file, 'w', encoding='UTF8') as make_file:
                                     json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + '광주광역시/' + file)
+                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + 'gwangju/' + file)
                             elif '인천' in file:
-                                with open(save_path + '/test/' + '인천광역시/' + file, 'w', encoding='UTF8') as make_file:
+                                with open(save_path + '/test/' + 'incheon/' + file, 'w', encoding='UTF8') as make_file:
                                     json.dump(origin_data, make_file, indent=4, ensure_ascii=False)
-                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + '인천광역시/' + file)
+                                    print('테스트 데이터 저장 대상 경로 : ', save_path + '/test/' + 'incheon/' + file)
                             else:
                                 print('테스트 데이터 파일명 ' + dir_path + '/' + month + '/' + file + '은 8개 도시에 포함되지 않습니다.')
 
